@@ -1,6 +1,0 @@
-{
-  "extends": "../../configs/query_copy_nq.json",
-  "attack_name": "guiding_context_misinformation",
-  "output_dir": "weak_attack_eval/results/11_guiding_context_misinformation",
-  "run_name": "nq-11-guiding_context-secure_ensemble-qa_robust_top1-retrieval-only"
-}

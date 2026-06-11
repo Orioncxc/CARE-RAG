@@ -188,12 +188,42 @@ train/
 server_package/
 baseline_comparison_llama3/
 PoisonedRAG.png
+baselines/
+official_baselines/
+weak_attack_eval/
 baselines/*-official/
 baselines/SeCon-RAG/
 baselines/**/runs/
 baselines/**/results/
 baselines/**/retrieval_inputs/
 official_baselines/repos/
+
+# Local ablations, training utilities, and draft configs kept out of slim release
+retrieval_framework/analyze_*.py
+retrieval_framework/build_*.py
+retrieval_framework/evaluate_*.py
+retrieval_framework/export_*.py
+retrieval_framework/influence_probe.py
+retrieval_framework/rescore_*.py
+retrieval_framework/run_*ablation*.py
+retrieval_framework/run_*ablation*.sh
+retrieval_framework/run_*sweep*.py
+retrieval_framework/run_*alphas*.sh
+retrieval_framework/run_head_focused.sh
+retrieval_framework/run_rag2rag_baseline.py
+retrieval_framework/run_unified_component_ablation.py
+retrieval_framework/summarize_clean_utility.py
+retrieval_framework/train_*.py
+retrieval_framework/configs/candidate_proposal_*.json
+retrieval_framework/configs/consequence_qa_*.json
+retrieval_framework/configs/evidence_hardened_focused*.json
+retrieval_framework/configs/evidence_hardened_qa_only*.json
+retrieval_framework/configs/evidence_hardened_v4*.json
+retrieval_framework/configs/head_focused_nq.json
+retrieval_framework/configs/query_safety_block_smoke.json
+retrieval_framework/configs/secure_ensemble*.json
+retrieval_framework/configs/top30_raw_candidates_100q.json
+retrieval_framework/consequence_policies/
 
 # Paper drafts and downloaded bundles
 *.pdf
@@ -214,7 +244,6 @@ official_baselines/repos/
 # Large downloaded/generated corpora
 *.jsonl
 !retrieval_framework/consequence_kb/*.jsonl
-!weak_attack_eval/attacks/**/config.json
 
 # Local-only config variants
 *.local.json

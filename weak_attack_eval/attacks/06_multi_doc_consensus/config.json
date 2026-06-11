@@ -1,7 +1,0 @@
-{
-  "extends": "../../configs/query_copy_nq.json",
-  "attack_name": "multi_doc_consensus",
-  "output_dir": "weak_attack_eval/results/06_multi_doc_consensus",
-  "run_name": "nq-06-multi_doc_consensus-secure_ensemble-qa_robust_top1-retrieval-only"
-}
-

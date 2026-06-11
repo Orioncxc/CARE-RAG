@@ -39,7 +39,6 @@ git status --ignored --short
 git add README.md LICENSE CITATION.cff CONTRIBUTING.md SECURITY.md \
   OPEN_SOURCE_CHECKLIST.md requirements.txt .gitignore \
   model_configs src retrieval_framework \
-  baselines official_baselines weak_attack_eval \
   prepare_dataset.py evaluate_beir.py run.py main.py
 git status --short
 git commit -m "Prepare CARE-RAG open source release"
