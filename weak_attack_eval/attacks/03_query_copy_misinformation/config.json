@@ -1,0 +1,7 @@
+{
+  "extends": "../../configs/query_copy_nq.json",
+  "attack_name": "query_copy_misinformation",
+  "output_dir": "weak_attack_eval/results/03_query_copy_misinformation",
+  "run_name": "nq-03-query_copy-secure_ensemble-qa_robust_top1-retrieval-only"
+}
+

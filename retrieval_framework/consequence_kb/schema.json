@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ConsequencePolicyEntry",
+  "type": "object",
+  "required": [
+    "consequence_id",
+    "domain",
+    "decision_type",
+    "severity",
+    "cost_weight",
+    "harm_description",
+    "match",
+    "required_policy",
+    "authority_sources"
+  ],
+  "properties": {
+    "consequence_id": {"type": "string"},
+    "domain": {"type": "string"},
+    "decision_type": {"type": "string"},
+    "severity": {"enum": ["medium", "high"]},
+    "cost_weight": {"type": "number", "minimum": 1},
+    "harm_description": {"type": "string"},
+    "applicable_condition": {"type": "string"},
+    "match": {
+      "type": "object",
+      "required": ["phrases", "patterns"],
+      "properties": {
+        "phrases": {"type": "array", "items": {"type": "string"}},
+        "patterns": {"type": "array", "items": {"type": "string"}},
+        "min_phrase_matches": {"type": "integer", "minimum": 1}
+      }
+    },
+    "required_policy": {
+      "type": "object",
+      "required": [
+        "min_support_margin",
+        "min_independent_support_groups",
+        "abstain_on_conflict"
+      ],
+      "properties": {
+        "min_support_margin": {"type": "number"},
+        "min_independent_support_groups": {"type": "integer", "minimum": 1},
+        "abstain_on_conflict": {"type": "boolean"},
+        "require_authoritative_source": {"type": "boolean"}
+      }
+    },
+    "authority_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "url", "authority"],
+        "properties": {
+          "name": {"type": "string"},
+          "url": {"type": "string"},
+          "authority": {"type": "string"},
+          "jurisdiction": {"type": "string"},
+          "accessed_at": {"type": "string"}
+        }
+      }
+    }
+  }
+}

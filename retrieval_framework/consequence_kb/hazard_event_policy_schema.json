@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HazardEventPolicy",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "domain",
+    "domain_aliases",
+    "policy_text",
+    "scope_exclusions",
+    "action_aliases",
+    "harm_target_aliases",
+    "decision_by_intent",
+    "consequence_ids"
+  ],
+  "properties": {
+    "policy_id": {"type": "string"},
+    "domain": {"type": "string"},
+    "policy_text": {"type": "string"},
+    "scope_exclusions": {"type": "array", "items": {"type": "string"}},
+    "domain_aliases": {"type": "array", "items": {"type": "string"}},
+    "action_aliases": {
+      "type": "object",
+      "additionalProperties": {"type": "array", "items": {"type": "string"}}
+    },
+    "harm_target_aliases": {
+      "type": "object",
+      "additionalProperties": {"type": "array", "items": {"type": "string"}}
+    },
+    "decision_by_intent": {
+      "type": "object",
+      "required": [
+        "facilitate_harm",
+        "prevent_or_report",
+        "decision_support",
+        "safety_review",
+        "informational",
+        "unknown"
+      ],
+      "additionalProperties": {"enum": ["block", "cautious_answer", "allow"]}
+    },
+    "consequence_ids": {"type": "array", "items": {"type": "string"}}
+  }
+}

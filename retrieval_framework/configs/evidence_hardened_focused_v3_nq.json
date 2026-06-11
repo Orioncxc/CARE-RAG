@@ -1,0 +1,99 @@
+{
+  "dataset": "nq",
+  "split": "test",
+  "model_name": "llama3",
+  "top_k": 5,
+  "attack_method": "LM_targeted",
+  "adv_per_query": 5,
+  "repeat_times": 10,
+  "M": 10,
+  "seed": 12,
+  "include_title": false,
+  "skip_llm": false,
+  "output_dir": "retrieval_framework/results/evidence_focused_v3",
+  "retriever": {
+    "type": "secure_ensemble",
+    "fusion": "consensus_rrf",
+    "rrf_k": 60,
+    "candidate_depth": 100,
+    "support_bonus": 0.02,
+    "single_penalty": 0.05,
+    "missing_penalty": 0.02,
+    "min_support": 1,
+    "cluster_cap": 0,
+    "cluster_jaccard_threshold": 0.72,
+    "channels": [
+      {
+        "name": "dense_contriever",
+        "type": "dense",
+        "weight": 1.0,
+        "dense": {
+          "model_code": "contriever",
+          "score_function": "dot",
+          "batch_size": 64,
+          "max_length": 128,
+          "device": "auto",
+          "gpu_id": 0,
+          "cache_dir": "retrieval_framework/cache",
+          "use_precomputed": true,
+          "precomputed_results_path": null
+        }
+      },
+      {
+        "name": "bm25",
+        "type": "bm25",
+        "weight": 1.0,
+        "bm25": {
+          "k1": 1.5,
+          "b": 0.75
+        }
+      }
+    ]
+  },
+  "evidence_hardening": {
+    "enabled": true,
+    "candidate_depth": 30,
+    "store_raw_candidates": false,
+    "rank_k": 60,
+    "cluster": {
+      "enabled": true,
+      "cap": 1,
+      "jaccard_threshold": 0.72
+    },
+    "answer_support": {
+      "enabled": true,
+      "max_mentions_per_doc": 3,
+      "use_reference_answers_for_scoring": false,
+      "max_docs_per_answer": 2,
+      "diversity_bonus": 0.006,
+      "duplicate_cluster_penalty": 0.004,
+      "max_bonus_clusters": 3,
+      "use_query_focus": true,
+      "focused_sentence_count": 3,
+      "use_answer_cues": true,
+      "max_candidate_words": 6
+    },
+    "contradiction": {
+      "enabled": true,
+      "conflict_penalty": 0.004,
+      "min_conflict_answers": 2
+    },
+    "query_echo": {
+      "enabled": true,
+      "prefix_window_tokens": 40,
+      "overlap_threshold": 0.9,
+      "exact_prefix_penalty": 0.03,
+      "high_overlap_penalty": 0.008
+    },
+    "rank_guard": {
+      "enabled": true,
+      "top_n": 1,
+      "min_promotion_margin": 0.002,
+      "max_promotion_original_rank": 20,
+      "min_answer_clusters": 1
+    },
+    "influence": {
+      "enabled": false
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "extends": "../../configs/query_copy_nq.json",
+  "attack_name": "indirect_prompt_injection",
+  "output_dir": "weak_attack_eval/results/08_indirect_prompt_injection",
+  "run_name": "nq-08-indirect_prompt_injection-secure_ensemble-qa_robust_top1-retrieval-only"
+}

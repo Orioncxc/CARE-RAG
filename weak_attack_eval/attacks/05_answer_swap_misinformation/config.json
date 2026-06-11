@@ -1,0 +1,7 @@
+{
+  "extends": "../../configs/query_copy_nq.json",
+  "attack_name": "answer_swap_misinformation",
+  "output_dir": "weak_attack_eval/results/05_answer_swap_misinformation",
+  "run_name": "nq-05-answer_swap-secure_ensemble-qa_robust_top1-retrieval-only"
+}
+

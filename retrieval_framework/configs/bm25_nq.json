@@ -1,0 +1,22 @@
+{
+  "dataset": "nq",
+  "split": "test",
+  "model_name": "llama3",
+  "top_k": 5,
+  "attack_method": "LM_targeted",
+  "adv_per_query": 5,
+  "repeat_times": 10,
+  "M": 10,
+  "seed": 12,
+  "include_title": false,
+  "skip_llm": false,
+  "output_dir": "retrieval_framework/results",
+  "retriever": {
+    "type": "bm25",
+    "bm25": {
+      "k1": 1.5,
+      "b": 0.75
+    }
+  }
+}
+

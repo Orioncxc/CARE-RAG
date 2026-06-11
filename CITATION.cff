@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use CARE-RAG, please cite this work."
+title: "CARE-RAG: Candidate-Answer Robust Evidence Hardening for Retrieval-Augmented Generation under Knowledge-Corruption Attacks"
+type: software
+authors:
+  - family-names: Chen
+    given-names: Xingchen
+  - family-names: Sun
+    given-names: Fanghui
+  - family-names: Wang
+    given-names: Kaiming
+  - family-names: Ma
+    given-names: Ying
+date-released: "2026-06-11"
+license: MIT
+repository-code: "https://github.com/Orioncxc/CARE-RAG"
+preferred-citation:
+  type: generic
+  title: "CARE-RAG: Candidate-Answer Robust Evidence Hardening for Retrieval-Augmented Generation under Knowledge-Corruption Attacks"
+  authors:
+    - family-names: Chen
+      given-names: Xingchen
+    - family-names: Sun
+      given-names: Fanghui
+    - family-names: Wang
+      given-names: Kaiming
+    - family-names: Ma
+      given-names: Ying
+  year: 2026
