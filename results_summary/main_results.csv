@@ -1,0 +1,5 @@
+dataset,num_queries,asr_percent,asr_ci95_low,asr_ci95_high,correct_percent,correct_ci95_low,correct_ci95_high,unknown_percent,other_percent,contam_at_5_percent,true_defense_fail_count,llm_prior_leak_count
+NQ,100,9,4,15,63,54,72,11,17,2.4,6,3
+HotpotQA,100,21,13,29,34,25,44,33,12,2.2,8,13
+MSMARCO,100,21,13,29,55,45,64,9,15,3.8,13,8
+Mean,300,17,,,51,,,18,15,2.8,9,8

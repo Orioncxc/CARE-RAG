@@ -118,6 +118,12 @@ See `retrieval_framework/README.md` for details.
 python -m pytest retrieval_framework/test_*.py
 ```
 
+## Result Summaries
+
+Compact aggregate results are in `results_summary/`. Full per-query outputs,
+logs, datasets, caches, and model artifacts are not committed to the main
+repository.
+
 ## Responsible Use
 
 This repository includes attack-evaluation code for studying RAG corpus

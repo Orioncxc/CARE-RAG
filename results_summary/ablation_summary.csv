@@ -1,0 +1,3 @@
+dataset,num_queries,variant,asr_strict_percent,asr_ci95_low,asr_ci95_high,correct_strict_percent,correct_ci95_low,correct_ci95_high,unknown_strict_percent,other_strict_percent,framework_asr_percent,contam_at_5_percent,true_defense_fail_percent,notes
+NQ,100,full_v2_patched,8,3,14,56,46,66,15,21,10,2.8,8,"Full method before removing low-value components."
+NQ,100,slimmed_public,7,2,12,64,55,73,12,17,9,2.4,6,"Public slimmed method; contradiction penalty, topic grounding, and evidence fallback disabled."
